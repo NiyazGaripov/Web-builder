@@ -10,4 +10,9 @@ module.exports = {
     devServer: {
         port: 3000,
     },
+    plugins: [
+        new HTMLWebpackPlugin({
+            template: './src/index.html',
+        })
+    ],
 }
