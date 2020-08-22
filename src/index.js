@@ -10,3 +10,13 @@ const createTitleMarkup = (block) => {
         </div>`
     )
 }
+
+const createTextMarkup = (block) => {
+    return (
+        `<div class="row">
+            <div class="col-sm">
+                <p>${block.value}</p>
+            </div>
+        </div>`
+    )
+}
