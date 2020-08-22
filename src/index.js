@@ -9,7 +9,7 @@ const createTitleMarkup = (block) => {
             </div>
         </div>`
     )
-}
+};
 
 const createTextMarkup = (block) => {
     return (
@@ -19,4 +19,14 @@ const createTextMarkup = (block) => {
             </div>
         </div>`
     )
-}
+};
+
+const createColumnsMarkup = (block) => {
+    const column = block.value.map(item => `<div class="col-sm"><p>${item}</p></div>`)
+
+    return (
+        `<div class="row">
+            ${column}
+        </div>`
+    )
+};
