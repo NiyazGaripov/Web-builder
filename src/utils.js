@@ -1,6 +1,6 @@
-export const getRow = (content) => {
+export const getRow = (content, styles = ``) => {
     return (
-        `<div class="row">
+        `<div class="row" style="${styles}">
             ${content}
         </div>`
     );
