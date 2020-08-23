@@ -1,23 +1,21 @@
-import {getRow} from "./utils";
+import {getCol, getRow} from "./utils";
 
 const createTitleMarkup = (block) => {
-    return getRow(
-        `<div class="col-sm">
-            <h1>${block.value}</h1>
-        </div>`
+    return getRow(getCol(
+        `<h1>${block.value}</h1>`
+        )
     );
 };
 
 const createTextMarkup = (block) => {
-    return getRow(
-        `<div class="col-sm">
-            <p>${block.value}</p>
-        </div>`
+    return getRow(getCol(
+        `<p>${block.value}</p>`
+        )
     );
 };
 
 const createColumnsMarkup = (block) => {
-    const column = block.value.map(item => `<div class="col-sm"><p>${item}</p></div>`).join('');
+    const column = block.value.map(item => getCol(`<p>${item}</p>`)).join('');
 
     return getRow(column);
 };
