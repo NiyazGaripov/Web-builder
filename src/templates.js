@@ -1,5 +1,5 @@
 
-export const createTitleMarkup = (block) => {
+const createTitleMarkup = (block) => {
     return (
         `<div class="row">
             <div class="col-sm">
@@ -9,7 +9,7 @@ export const createTitleMarkup = (block) => {
     );
 };
 
-export const createTextMarkup = (block) => {
+const createTextMarkup = (block) => {
     return (
         `<div class="row">
             <div class="col-sm">
@@ -19,7 +19,7 @@ export const createTextMarkup = (block) => {
     );
 };
 
-export const createColumnsMarkup = (block) => {
+const createColumnsMarkup = (block) => {
     const column = block.value.map(item => `<div class="col-sm"><p>${item}</p></div>`).join('');
 
     return (
@@ -28,3 +28,5 @@ export const createColumnsMarkup = (block) => {
         </div>`
     );
 };
+
+export const templates = {createTitleMarkup, createTextMarkup, createColumnsMarkup}
