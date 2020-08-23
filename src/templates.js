@@ -1,9 +1,11 @@
 import {getCol, getRow} from "./utils";
 
 const createTitleMarkup = (block) => {
+    const {tag, styles} = block.options;
+
     return getRow(getCol(
-        `<h1>${block.value}</h1>`
-    ), block.options.styles);
+        `<${tag}>${block.value}</${tag}>`
+    ), styles);
 };
 
 const createTextMarkup = (block) => {
