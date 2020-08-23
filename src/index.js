@@ -1,6 +1,8 @@
 import {models} from './model';
 import './styles/main.css'
 
+const site = document.querySelector('#site');
+
 const createTitleMarkup = (block) => {
     return (
         `<div class="row">
@@ -48,5 +50,5 @@ models.forEach(block => {
             html = ``;
     }
 
-    document.querySelector('#site').insertAdjacentHTML(`beforeend`, html);
+    site.insertAdjacentHTML(`beforeend`, html);
 })
