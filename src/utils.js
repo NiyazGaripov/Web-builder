@@ -5,3 +5,11 @@ export const getRow = (content) => {
         </div>`
     );
 };
+
+export const getCol = (content) => {
+    return (
+        `<div class="col-sm">
+            ${content}
+        </div>`
+    );
+};
