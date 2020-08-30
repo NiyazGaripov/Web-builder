@@ -1,5 +1,14 @@
+import img from './img/logo.svg';
+
 export const models = [
-    {type: `title`, value: `Web Builder`, options: {
+    {type: `navigation`, value: [`Tours`, `Training`, `About us`, `Contacts`], options: {
+        styles: `padding: 5px;`,
+        img: {
+            path: `${img}`,
+            alt: 'Logo company'
+        }
+    }},
+    {type: `title`, value: `Travel around the world`, options: {
         tag: `h2`,
         styles: `color: white; text-align: center; background-color: green;`
     }},
