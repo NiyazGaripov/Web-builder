@@ -5,9 +5,9 @@ const createHeaderMarkup = (block) => {
     const item = block.value.map(it => `<a href="" style="${styles}">${it}</a>`).join('\n');
 
     return (
-        `<header>
+        `<header class="header">
             <img src="${img.path}" alt="${img.alt}">
-            <nav class="nav">
+            <nav>
                 ${item}
             </nav>
         </header>`
