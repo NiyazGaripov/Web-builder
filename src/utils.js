@@ -1,6 +1,8 @@
 export const getRow = (content, styles = ``) => {
+    const style = `margin: 0; ${styles}`
+
     return (
-        `<div class="row" style="${styles}">
+        `<div class="row" style="${style}">
             ${content}
         </div>`
     );
