@@ -4,7 +4,7 @@ const createHeaderMarkup = (block) => {
     const {img, styles} = block.options;
     const item = block.value.map(it => `<a href="" style="${styles}">${it}</a>`).join('\n');
 
-    return (
+    return getCol(
         `<header class="header">
             <img src="${img.path}" alt="${img.alt}">
             <nav>
@@ -24,7 +24,7 @@ const createTitleMarkup = (block) => {
 
 const createTextMarkup = (block) => {
     return getRow(getCol(
-        `<p>${block.value}</p>`
+        `<p style="margin-bottom: 0">${block.value}</p>`
     ), block.options.styles);
 };
 
