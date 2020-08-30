@@ -1,6 +1,6 @@
 import {models} from './model';
 import './styles/main.css'
-import {createColumnsMarkup, createTextMarkup, createTitleMarkup} from "./templates";
+import {templates} from "./templates";
 
 const site = document.querySelector('#site');
 
@@ -8,14 +8,17 @@ models.forEach(block => {
     let html;
 
     switch (block.type) {
+        case "navigation":
+            html = templates.createHeaderMarkup(block);
+            break;
         case "title":
-            html = createTitleMarkup(block);
+            html = templates.createTitleMarkup(block);
             break;
         case "text":
-            html = createTextMarkup(block);
+            html = templates.createTextMarkup(block);
             break;
         case "columns":
-            html = createColumnsMarkup(block);
+            html = templates.createColumnsMarkup(block);
             break;
         default:
             html = ``;
