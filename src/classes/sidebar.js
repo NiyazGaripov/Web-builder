@@ -1,3 +1,6 @@
+import {Title} from "./title";
+import {Text} from "./text";
+
 const createForm = (type) => {
     return (
         `<form name="${type}">
@@ -22,6 +25,7 @@ export class Sidebar {
     }
 
     init() {
+        this.$el.addEventListener('submit', this.addBlock);
         this.$el.innerHTML = this.getTemplate();
     }
 
@@ -30,5 +34,19 @@ export class Sidebar {
             createForm(`title`),
             createForm(`text`)
         ).join('\n');
+    }
+
+    addBlock(evt) {
+        evt.preventDefault();
+
+        const type = evt.target.name;
+        const value = evt.target.value.value;
+        const styles = evt.target.styles.value;
+
+        const Constructor = type === `title` ? Title : Text;
+        const newBlock = new Constructor(value, {styles});
+
+        evt.target.value.value = ``;
+        evt.target.styles.value = ``;
     }
 }
