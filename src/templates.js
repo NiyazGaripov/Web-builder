@@ -1,13 +1,5 @@
 import {getCol, getRow} from "./utils";
 
-const createTitleMarkup = (block) => {
-    const {tag, styles} = block.options;
-
-    return getRow(getCol(
-        `<${tag}>${block.value}</${tag}>`
-    ), styles);
-};
-
 const createTextMarkup = (block) => {
     return getRow(getCol(
         `<p style="margin-bottom: 0">${block.value}</p>`
@@ -31,4 +23,4 @@ const createColumnsMarkup = (block) => {
     return getRow(column, block.options.styles);
 };
 
-export const templates = {createTitleMarkup, createTextMarkup, createColumnsMarkup}
+export const templates = {createTextMarkup, createColumnsMarkup}
