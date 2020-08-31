@@ -11,4 +11,8 @@ export class Text extends Block {
     constructor(value, options) {
         super(value, options);
     }
+
+    getTemplate() {
+        return createTextMarkup(this);
+    }
 }
