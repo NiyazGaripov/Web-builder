@@ -22,6 +22,13 @@ export class Sidebar {
     }
 
     init() {
-        this.$el.innerHTML = `<h3>Test</h3>`
+        this.$el.innerHTML = this.getTemplate();
+    }
+
+    getTemplate() {
+        return Array.of(
+            createForm(`title`),
+            createForm(`text`)
+        ).join('\n');
     }
 }
