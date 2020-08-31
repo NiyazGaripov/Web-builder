@@ -21,4 +21,8 @@ export class Header extends Block {
     constructor(value, options) {
         super(`header`, value, options);
     }
+
+    getTemplate() {
+        return createHeaderMarkup(this);
+    }
 }
