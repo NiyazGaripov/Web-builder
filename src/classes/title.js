@@ -13,4 +13,8 @@ export class Title extends Block {
     constructor(value, options) {
         super(value, options);
     }
+
+    getTemplate() {
+        return createTitleMarkup(this);
+    }
 }
