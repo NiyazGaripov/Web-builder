@@ -2,10 +2,10 @@ import img from './img/logo.svg';
 import elbrus from './img/elbrus.png';
 import beluha from './img/beluha.png';
 import fisht from './img/fisht.png';
-import {Block} from './classes/block.js';
+import {Block} from './classes/block';
 
 export const models = [
-    new Block(`navigation`, [`Tours`, `Training`, `About`, `Contacts`], {
+    new Block(`header`, [`Tours`, `Training`, `About`, `Contacts`], {
         styles: `padding: 5px 30px; color: white`,
         img: {
             path: `${img}`,

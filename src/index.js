@@ -8,7 +8,7 @@ models.forEach(block => {
     let html;
 
     switch (block.type) {
-        case "navigation":
+        case "header":
             html = templates.createHeaderMarkup(block);
             break;
         case "title":
