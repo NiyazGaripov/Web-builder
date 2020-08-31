@@ -2,7 +2,8 @@ import {getCol, getRow} from "./utils";
 
 const createHeaderMarkup = (block) => {
     const {img, styles} = block.options;
-    const item = block.value.map(it => `<a href="" style="${styles}">${it}</a>`).join('\n');
+    const path = block.value.map(it => `${it.charAt(0).toLowerCase()}${it.slice(1)}`);
+    const item = block.value.map((it, index) => `<a href="${path[index]}" style="${styles}">${it}</a>`).join('\n');
 
     return getCol(
         `<header class="header">
