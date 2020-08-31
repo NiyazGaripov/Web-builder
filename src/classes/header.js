@@ -1,5 +1,5 @@
-import {Block} from './block';
 import {getCol} from "../utils";
+import {Block} from './block';
 
 const createHeaderMarkup = (block) => {
     const {img, styles} = block.options;
@@ -19,7 +19,7 @@ const createHeaderMarkup = (block) => {
 
 export class Header extends Block {
     constructor(value, options) {
-        super(`header`, value, options);
+        super(value, options);
     }
 
     getTemplate() {
