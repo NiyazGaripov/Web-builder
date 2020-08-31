@@ -3,9 +3,10 @@ import elbrus from './img/elbrus.png';
 import beluha from './img/beluha.png';
 import fisht from './img/fisht.png';
 import {Block} from './classes/block';
+import {Header} from "./classes/header";
 
 export const models = [
-    new Block(`header`, [`Tours`, `Training`, `About`, `Contacts`], {
+    new Header([`Tours`, `Training`, `About`, `Contacts`], {
         styles: `padding: 5px 30px; color: white`,
         img: {
             path: `${img}`,
