@@ -4,4 +4,8 @@ export class Block {
         this.value = value;
         this.options = options;
     }
+
+    getTemplate() {
+        throw new Error(`Abstract method not implemented: getTemplate`);
+    }
 }
