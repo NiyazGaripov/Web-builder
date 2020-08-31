@@ -1,20 +1,5 @@
 import {getCol, getRow} from "./utils";
 
-const createHeaderMarkup = (block) => {
-    const {img, styles} = block.options;
-    const path = block.value.map(it => `${it.charAt(0).toLowerCase()}${it.slice(1)}`);
-    const item = block.value.map((it, index) => `<a href="${path[index]}" style="${styles}">${it}</a>`).join('\n');
-
-    return getCol(
-        `<header class="header">
-            <img src="${img.path}" alt="${img.alt}">
-            <nav>
-                ${item}
-            </nav>
-        </header>`
-    );
-};
-
 const createTitleMarkup = (block) => {
     const {tag, styles} = block.options;
 
@@ -46,4 +31,4 @@ const createColumnsMarkup = (block) => {
     return getRow(column, block.options.styles);
 };
 
-export const templates = {createHeaderMarkup, createTitleMarkup, createTextMarkup, createColumnsMarkup}
+export const templates = {createTitleMarkup, createTextMarkup, createColumnsMarkup}
