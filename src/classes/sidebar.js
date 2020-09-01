@@ -6,7 +6,9 @@ const createForm = (type) => {
         `<form name="${type}">
             <h5>${type}</h5>
             <div class="form-group">
-                <input class="form-control form-control-sm" name="value" placeholder="value">
+                ${type === 'image' ? 
+                `<input type="file" id="upload-file" class="form-control form-control-sm" name="filename" accept="image/*" placeholder="Choise image">` :
+                `<input class="form-control form-control-sm" name="value" placeholder="value">`}
             </div>
             <div class="form-group">
                 <input class="form-control form-control-sm" name="styles" placeholder="styles">
@@ -33,7 +35,8 @@ export class Sidebar {
     getTemplate() {
         return Array.of(
             createForm(`title`),
-            createForm(`text`)
+            createForm(`text`),
+            createForm(`image`)
         ).join('\n');
     }
 
