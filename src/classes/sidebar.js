@@ -18,14 +18,15 @@ const createForm = (type) => {
 }
 
 export class Sidebar {
-    constructor(selector) {
+    constructor(selector, update) {
         this.$el = document.querySelector(selector);
+        this.update = update;
 
         this.init();
     }
 
     init() {
-        this.$el.addEventListener('submit', this.addBlock);
+        this.$el.addEventListener('submit', this.addBlock.bind(this));
         this.$el.innerHTML = this.getTemplate();
     }
 
@@ -43,8 +44,9 @@ export class Sidebar {
         const value = evt.target.value.value;
         const styles = evt.target.styles.value;
 
-        const Constructor = type === `title` ? Title : Text;
+        const Constructor = type === `text` ? Text : Title;
         const newBlock = new Constructor(value, {styles});
+        this.update(newBlock);
 
         evt.target.value.value = ``;
         evt.target.styles.value = ``;
