@@ -15,3 +15,9 @@ export const getCol = (content) => {
         </div>`
     );
 };
+
+export const getCss = (style = {}) => {
+    const getStyle = (key) => `${key}: ${style[key]}`;
+
+    return Object.keys(style).map(getStyle).join(';');
+}
